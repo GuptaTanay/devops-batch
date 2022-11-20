@@ -220,10 +220,110 @@ for i in range(n):
 
 
 def mul(a, b):
-    print(a*b)
+    return (a*b)
 
 
-mul(1, 3)
-
+v = mul(1, 3)
+print(v)
 # h.w --> create a function for all the arithematic operators in python and use 3 argumnets
     
+
+# -------------------------------------------------------------------------------
+def abc(a, b):
+    def subtract(a,b):
+        return a-b
+    return subtract(a, b)
+    
+a =2
+b=3
+print(abc(a, b))
+# ---------------------------------------------------------------------------------
+
+# OOPS : Object Oriented Programming
+
+# Class, Object, methods, inheritence, abstraction, encapsulation
+
+# Class: it is a wrapper where you can define the properties of an object
+print('-----------------------------------------------------------------')
+class Math:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+    
+    def subtract(self):
+        return self.a- self.b
+    def multiply(self):
+        return self.a * self.b
+    def divide(self):
+        return self.a // self.b
+    def reminder(self):
+        return self.a % self.b
+    
+    
+#object: object is a real world entity which brings the class into real life
+mat = Math(2, 5)
+s = mat.subtract()
+print(s)
+
+
+mat2 = Math(19, 9)
+s = mat2.subtract()
+print(s)
+
+# ------------------------------------------------------------------------------
+# Inheritence: Passing the attributes of a parent class to its child 
+
+# ABC --> Child
+# Math --> Parent
+class ABC(Math):
+    print('inside abc')
+    
+    
+abc = ABC(2,5)
+print(abc.subtract())
+
+
+# H/w: What are the different types of inhreitence in pythn and their example? code?
+# -------------------------------------------------------------------------------
+
+
+# Access modifiers: They control the access of any variable, attribute, member, function, etc.
+
+# 1. Public: Accessible by anyone inside the same code
+# 2. Protected: Accessible by same class object or by its child class
+# 3. Private: Not accessible anywhere 
+
+class A:
+    a = 10
+    _b = 20
+    __c = 30
+    print(_b + __c)
+    
+
+
+class B(A):
+    print(A._b)
+
+d = B
+
+# -------------------------------------------------------------------------------
+# package: is basically collection of python programs
+# module: is  a collection of packages
+# import pandas as pd
+# import numpy as np
+import datetime
+
+# pandas --> is used to deal with the data, helps in data manipultaion
+# numpy --> is used for mathematical computations
+# os --> is used to deal with operating system concepts
+# sys --> is used to deal with system properties and attributes
+# datetime --> used for date time
+
+
+today = datetime.date.today()
+print(today)
+
+time = datetime.datetime.now()
+print(time)
+
+# H.w: to list down 5 modules in python? the usage of the same?

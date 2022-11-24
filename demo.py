@@ -31,11 +31,37 @@ median_age = data.age.median()
 # h.w. --> read the csv file and tell me what are the diffrent job title in the data?
 # how to solve this in python
 # -----------------------------------------------------------------
-a = {'age':21, 'name':'abc', 'marrital_status': 'single'}
-print(a.keys())
-print(a.items())
-print(a.values())
+# a = {'age':21, 'name':'abc', 'marrital_status': 'single'}
+# print(a.keys())
+# print(a.items())
+# print(a.values())
 
 
-a = {1,1,1,2,3,45,6,6}
-print(a)
+# a = {1,1,1,2,3,45,6,6}
+# print(a)
+
+# -----------------------------------------------------------------
+print(data.dtypes)
+def age_count(df):
+    if df.age>=18 and df.age<60:
+        return 'Junior'
+    else:
+        return 'Senior Citizen'
+    
+    
+data['age_group'] = data.apply(age_count, axis=1)
+
+data.to_csv('a.csv', index= False)
+
+age_count = data.groupby('age', as_index= False)['education'].count()
+marital_coount = data.groupby('marital status').agg({'age': 'count'})
+
+marital_coount.to_excel('abc.xlsx')
+# df = pd.read_excel('name_of_xcl.xlsx')
+# pd.read_json('name.json'
+
+
+# h.w. --> what is a json file and example of it?
+
+# -------------------------------------------------------------------
+# a = data.sort_values('age', ascending= False)
